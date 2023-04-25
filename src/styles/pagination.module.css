@@ -1,0 +1,23 @@
+.paginationCard {
+  position: relative;
+  left: 44%;
+  display: inline-block;
+  padding: 1%;
+  background-color: #12151b;
+  margin-top: 6px;
+  border-radius: 20px;
+}
+.paginationCard span {
+  color: aliceblue;
+  padding-left: 4px;
+  padding-right: 4px;
+  user-select: none;
+}
+.flechas {
+  padding:4px;
+  padding-left: 6px;
+  padding-right: 6px;
+  border-radius: 10px;
+  color: #a7f59b;
+  background-color: #414653;
+}

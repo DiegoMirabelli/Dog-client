@@ -1,0 +1,44 @@
+.filtersContainer {
+  margin: 5px;
+  margin-top: 40px;
+  margin-right: 6px;
+  border: 1px #a7f59b solid;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtersContainer h1 {
+  display: flex;
+  justify-content: center;
+  color: aliceblue;
+  width: 100%;
+}
+
+.filters {
+  width: 90%;
+  max-width: 275px;
+  min-width: 275px;
+  margin-bottom: 15px;
+  color: #a7f59b;
+  border-radius: 5px;
+  background: #414653;
+  padding: 15px;
+  padding-left: 45px;
+  font-family: inherit;
+  font-size: 0.8em;
+  text-align: center;
+  position: relative;
+}
+
+.filters::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+
+
+}

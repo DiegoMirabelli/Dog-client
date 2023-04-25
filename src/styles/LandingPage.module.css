@@ -1,0 +1,171 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Lucida Sans", Arial;
+}
+
+/* FONDO */
+.all {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  }
+  
+  .background,
+  .image {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  z-index: -1;
+  }
+  
+  .background {
+  right: 0;
+  background-color: #181a1d;
+  width: 100%;
+  }
+  
+  .image {
+  right: 0;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.91)),
+  url("./img/fondoPerro.jpg");
+  background-size: cover;
+  background-position-x: -75px;
+  width: 50%;
+  }
+  
+  /* BIENVENIDA */
+  .bienvenida {
+  width: 50%;
+  text-align: center;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  position: absolute;
+  top: 50%;
+  left: 75%;
+  transform: translate(-50%, -50%);
+  }
+  
+  .bienvenida button {
+  padding: 10px 20px;
+  border: none;
+  background-color: #a7f59b;
+  color: black;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  }
+  
+  .logoPrincipal {
+    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  
+  }
+  .logoPrincipal img {
+    background: linear-gradient(to right, #ffffff, #e5f5fa);
+  border-radius: 50%;
+  padding: 20px;
+  transform: scale(0.7);
+  max-width: 100px;
+  
+  }
+  .chuleta {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  color: rgb(255, 255, 255);
+  font-size: 0.5em;
+  
+  }
+  .chuleta img {
+  width: 25px;
+  margin-right: 10px;
+  }
+  .chuleta a {
+  color: #a7f59b;
+  text-decoration: none;
+  }
+
+
+
+.landingCardContainer {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  left: 24%;
+  transform: translate(-50%, -50%);
+  
+}
+.eslogan {
+  width: 75%;
+  font-size: 0.9em;
+  font-family: 'Courier New', monospace;
+  text-align: center;
+  color: #a7f59b;
+}
+
+
+
+
+
+
+
+  
+  @media screen and (max-width: 1280px) {
+  .image {
+
+  background-position-x: -135px;
+  }
+  
+  .bienvenida {
+  width: 100%;
+  font-size: 1.4rem;
+  }
+  }
+  
+  @media screen and (max-width: 376px) and (max-height: 668px) {
+  .background {
+  width: 100%;
+  }
+  .image {
+  width: 100%;
+  height: 40%;
+  }
+  
+  .bienvenida {
+  top: 20%;
+  left: 50%;
+  width: 100%;
+  font-size: 0.8rem;
+  }
+  }
+  
+  @media screen and (max-width: 576px) {
+  .logoPrincipal img {
+  max-width: 80px;
+  padding: 10px;
+  }
+  
+  .chuleta img {
+  width: 20px;
+  margin-right: 5px;
+  }
+  
+  .chuleta {
+  font-size: 0.4em;
+  }
+  }

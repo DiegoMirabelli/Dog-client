@@ -1,0 +1,111 @@
+.nav {
+  width: 100%;
+  background-color: #414653;
+  color: #a7f59b;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1px solid;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.logo {
+  cursor: pointer;
+  background-color: #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+  transform: scale(0.7);
+  max-width: 60px; /* establece un ancho máximo para el logo en píxeles */
+}
+
+.menu {
+  max-width: 50px; /* establece un ancho máximo para el logo en píxeles */
+  transform: rotate(180deg);
+  transform: scale(0.8);
+  transition: 1s;
+}
+
+.menu:hover {
+  transform: scale(1);
+  transition: 1s;
+}
+
+.btnMenu {
+  position: absolute;
+  left: 95%;
+  top: 15%;
+  background-color: transparent;
+  border: none;
+}
+
+.menuContainer {
+  z-index: 999;
+  position: fixed;
+  top: 8.3%;
+  left: 75%;
+  width: 25%;
+  height: 92%;
+  background-color: #414653;
+  transform: translateX(100%);
+  overflow: hidden;
+  border-left: 1px solid #a7f59b;
+  transition: transform 0.3s ease-out;
+}
+
+/*abrir el menú */
+.nav.menuOpen + .menuContainer {
+  transform: translateX(0%);
+}
+
+/*cerrar el menú */
+.nav.menuClosed + .menuContainer {
+  transform: translateX(100%);
+}
+
+.menuList {
+  list-style: none;
+  border: #a7f59b 1px solid;
+  margin: 5px;
+  margin-right: 6px;
+  margin-top: 0px;
+  border: 1px #a7f59b solid;
+}
+
+.menuList li {
+  margin: 15px;
+  margin-right: 50px;
+  display: flex;
+  justify-content: center;
+  border: #a7f59b 1px solid;
+  border-radius: 5px;
+}
+
+.menuList li a {
+  color: #a7f59b;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+  .logo {
+    max-width: 20%; /* establece un ancho máximo para el logo en porcentaje para pantallas más pequeñas */
+    padding: 5px;
+  }
+  
+  .menuContainer {
+    left: 80%;
+    width: 20%;
+  }
+  
+  .menuList li {
+    margin: 10px;
+    margin-right: 20px;
+  }
+  
+  .menuList li a {
+    font-size: 1rem;
+  }
+}
