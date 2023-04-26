@@ -16,8 +16,26 @@
   }
   
   .detailContainer {
-    background-color: black;
+    position: relative;
+    left: 10%;
+    margin-top: 150px;
+    background-color: rgb(14, 14, 14);
+    border-radius: 15px;
+    border: 1px solid #a7f59b;
+    height: 80%;
+    width: 80%;
   }
   .stats {
+    text-align: center;
+    margin-top: 45px;
     color:aliceblue;
+    font-size: large;
+    font-family: monospace;
+    font-weight: 500;
+  }
+  .imagen {
+    border-radius: 10px;
+    position: relative;
+    left: 19%;
+    
   }

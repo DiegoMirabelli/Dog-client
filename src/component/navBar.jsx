@@ -12,10 +12,6 @@ const NavBar = ({ setCurrentPage }) => {
   const handleMenuClick = () => {
     setShowMenu(!showMenu);
   };
-  const handleLogoClick = () => {
-    window.location.reload();
-  };
-
 
   return (
     <>
@@ -24,7 +20,9 @@ const NavBar = ({ setCurrentPage }) => {
           showMenu ? styles.menuOpen : styles.menuClosed
         }`}
       >
-       <img className={styles.logo} src={logo} alt="logo" onClick={handleLogoClick} />
+        <Link to="/home">
+          <img className={styles.logo} src={logo} alt="logo" />
+        </Link>
 
         <h1>PI-Dogs</h1>
         <SearchBar setCurrentPage={setCurrentPage} />
@@ -38,7 +36,11 @@ const NavBar = ({ setCurrentPage }) => {
           <li>
             <Link to="/">Home</Link>
           </li>
-
+          <li>
+            <Link to="/createDog">
+              <button>Crate Dog</button>
+            </Link>
+          </li>
           <li>
             <Link to="/about">About</Link>
           </li>
@@ -49,11 +51,7 @@ const NavBar = ({ setCurrentPage }) => {
         <div>
           <Filters setCurrentPage={setCurrentPage} />
         </div>
-        <div>
-          <Link to="/createDog">
-            <button>Crear</button>
-          </Link>
-        </div>
+        <div></div>
       </div>
     </>
   );

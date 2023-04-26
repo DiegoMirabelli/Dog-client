@@ -31,8 +31,8 @@ const Detail = () => {
                 className={styles.imagen}
                 src={DogDeits.image}
                 alt={DogDeits.name}
-                width="200"
-                height="150"
+                width="650"
+                height="500"
               />
             </div>
             <div>

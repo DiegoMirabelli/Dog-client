@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getDogs, getTemperaments } from "../store/actions";
 import styles from "../styles/Create.module.css";
 import { Link } from "react-router-dom";
-
+import NavBar from "../component/navBar";
 const CreateDog = () => {
   const tempForm = useSelector((state) => state.temperaments);
   const dispatch = useDispatch();
@@ -38,46 +38,45 @@ const CreateDog = () => {
     if (tempForm.length === 0) return dispatch(getTemperaments());
   }, [tempForm.length, dispatch]);
 
-
   //<-------------VALIDATE------------------------>
   const validate = (completed) => {
     let errors = {};
     if (!completed.name) {
-      errors.name = "El nombre del perro es requerido";
-    } 
-     if (completed.name.length < 3) {
-      errors.name = "El nombre del perro debe tener al menos 3 caracteres";
+      errors.name = "Dog name is required";
+    }
+    if (completed.name.length < 3) {
+      errors.name = "Dog name must be at least 3 characters";
     }
     if (!completed.heightmin || !completed.heightmax) {
-      errors.height = "La altura del perro es requerido";
-    } 
+      errors.height = "Dog height is required";
+    }
     //verifica si heightmax es menor o igual que el valor de heightmin
-     if (parseInt(completed.heightmax) <= parseInt(completed.heightmin)) {
-      errors.height = "La altura-max debe ser más alto que la altura-min";
+    if (parseInt(completed.heightmax) <= parseInt(completed.heightmin)) {
+      errors.height = "Height-max must be higher than height-min";
     }
     if (!completed.weightmin || !completed.weightmax) {
-      errors.weight = "El peso del perro es requerido";
-    } 
-     if (parseInt(completed.weightmax) <= parseInt(completed.weightmin)) {
-      errors.weight = "El peso-max debe ser más alto que el peso-min";
+      errors.weight = "Dog weight is required";
+    }
+    if (parseInt(completed.weightmax) <= parseInt(completed.weightmin)) {
+      errors.weight = "Weight-max must be higher than weight-min";
     }
     if (!completed.life_spanmin || !completed.life_spanmax) {
-      errors.life_span = "Life span es requerido";
-    } 
-     if (parseInt(completed.life_spanmax) <= parseInt(completed.life_spanmin)) {
-      errors.life_span = "Life span-max debe ser mas alto que el life span-min";
+      errors.life_span = "Life span is required";
+    }
+    if (parseInt(completed.life_spanmax) <= parseInt(completed.life_spanmin)) {
+      errors.life_span = "Life span-max must be higher than life span-min";
     }
     if (completed.temperaments.length === 0) {
-      errors.temperaments = "Los temperamentos son requeridos";
+      errors.temperaments = "Temperaments are required";
     }
     if (completed.life_spanmax < 0 || completed.life_spanmin < 0) {
-      errors.life_span = "El valor debe ser mayor que 0";
+      errors.life_span = "The value must be greater than 0";
     }
     if (completed.weightmax < 0 || completed.weightmin < 0) {
-      errors.weight = "El valor debe ser mayor que 0";
+      errors.weight = "The value must be greater than 0";
     }
     if (completed.heightmax < 0 || completed.heightmin < 0) {
-      errors.height = "El valor debe ser mayor que 0";
+      errors.height = "The value must be greater than 0";
     }
 
     return errors;
@@ -113,7 +112,7 @@ const CreateDog = () => {
 
   const handleSubmit = (e) => {
     if (!completed.name) alert("El nombre del perro es requerido");
-    console.log(finalForm)
+    console.log(finalForm);
     e.preventDefault();
     const errors = validate(completed);
     setErrors(errors);
@@ -123,7 +122,6 @@ const CreateDog = () => {
       setCompleted(initialState);
     }
   };
-  
 
   function handleDelete(name) {
     setCompleted({
@@ -134,33 +132,31 @@ const CreateDog = () => {
 
   return (
     <>
+      <NavBar></NavBar>
       <section className={styles.back}>
-        <Link to="/home">
-          <button className={styles.btnHome}>Home</button>
-        </Link>
+        <div className={styles.overlay}></div>
+
         {/* se pasa como prop create para cambiar el estado de crear un perro a perro creado con exito */}
-        <div className={styles.FormContainer} create={create}>
-          {!create ? ( 
+        <div className={styles.formContainer} create={create}>
+          {!create ? (
             // si el estado create es falso dice crea sino perro creado
-            <h2 className={styles.titulo}>CREA A TU PERRITO!</h2>
+            <h2 className={styles.titulo}>CREATE YOUR DOG</h2>
           ) : (
-            
             <h2>DOG HAS BEEN CREATED SUCCESSFULLY</h2>
           )}
-          <div className={styles.form} >
-          <div className={styles.label}>Nombre de tu perrito:</div>
+          <div className={styles.form}>
+            <div className={styles.label}>Name of your puppy:</div>
             <input
               type="text"
               name="name"
-              autoComplete='off'
+              autoComplete="off"
               value={completed.name}
               // actualiza el estado completed usando la funcion handleChange
               onChange={handleChange}
-              
             />
             {errors.name ? <label>{errors.name}</label> : null}
             <br />
-            <div className={styles.label}>Altura:</div>
+            <div className={styles.label}>Height:</div>
             <input
               type="Number"
               name="heightmin"
@@ -168,7 +164,6 @@ const CreateDog = () => {
               placeholder="Height-Min"
               value={completed.heightmin}
               onChange={handleChange}
-              
             />
             <input
               type="Number"
@@ -179,7 +174,7 @@ const CreateDog = () => {
               onChange={handleChange}
             />
             {errors.height ? <label>{errors.height}</label> : null} <br />
-            <div className={styles.label}>Peso:</div>
+            <div className={styles.label}>Weight:</div>
             <input
               type="Number"
               name="weightmin"
@@ -197,7 +192,7 @@ const CreateDog = () => {
               onChange={handleChange}
             />
             {errors.weight ? <label>{errors.weight}</label> : null} <br />
-            <div className={styles.label}>Años de vida:</div>
+            <div className={styles.label}>years of life:</div>
             <input
               name="life_spanmin"
               value={completed.life_spanmin}
@@ -214,19 +209,21 @@ const CreateDog = () => {
               onChange={handleChange}
             />
             {errors.life_span ? <label>{errors.life_span}</label> : null} <br />
-            <div className={styles.label}>Imagen (url):</div>
+            <div className={styles.label}>Image (url):</div>
             <input
               name="image"
               value={completed.image}
-              placeholder="Pon una URL"
+              placeholder="URL"
               type="text"
               onChange={handleChange}
-              autoComplete='off'
+              autoComplete="off"
             />
             <br />
-            <p>Temperamentos:</p>
+            <p className={styles.label}>Temperament:</p>
             <select name="temperaments" onChange={handleTemperaments}>
-              <option value="default">Elegir</option>
+              <option value="" disabled selected>
+                Select
+              </option>
               {tempForm?.map((item) => (
                 <option value={item.name} key={item.id}>
                   {item.name}
@@ -236,11 +233,16 @@ const CreateDog = () => {
             {errors.temperaments ? <label>{errors.temperaments}</label> : null}
             <div className={styles.button} create={create}>
               {!create ? (
-                
-             <button onClick={(e) => handleSubmit(e)} className={styles.crear} type="submit">Crear</button>
+                <button
+                  onClick={(e) => handleSubmit(e)}
+                  className={styles.crear}
+                  type="submit"
+                >
+                  Create
+                </button>
               ) : (
-                <Link onClick={() => dispatch(getDogs())} to="/home">
-                  REGRESA A HOME
+                <Link onClick={() => dispatch(getDogs())} to="/home" className={styles.regresar}>
+                  RETURN TO HOME
                 </Link>
               )}
             </div>

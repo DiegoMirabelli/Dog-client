@@ -1,0 +1,145 @@
+.back {
+    position: absolute;
+    background-image: url(./img/fondoPagina.jpg);
+    z-index: 1;
+    width: 100%;
+    height: 150%;
+  }
+  .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(39, 39, 39, 0.95);
+    z-index: -1;
+  }
+
+  /* Estilos para el contenedor del formulario */
+.formContainer {
+    background-color: #414653;
+    border-radius: 10px;
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.16);
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    margin-top: 8%;
+  }
+  
+  /* Estilos para el título */
+  .titulo {
+    color: aliceblue;
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  /* Estilos para los campos de entrada */
+  .label {
+    color: aliceblue;
+    text-align: center;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 20px;
+    padding: 10px;
+    width: 100%;
+  }
+  .regresar {
+    padding: 5px;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    background-color: #a7f59b;
+  }
+  .formContainer input, select {
+    border: none;
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    width: 98%;
+    padding: 8px;
+
+    
+  }
+  .formContainer select {
+    width: 100%;
+    overflow: hidden;
+  }
+  /* Estilos para los mensajes de error */
+  label {
+    color: red;
+    font-size: 12px;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilos para los botones */
+  .crear {
+    background-color: #a7f59b;
+    border: none;
+    border-radius: 5px;
+    color: #000000;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+  }
+  
+  .crear:hover {
+    background-color: #eeffec;
+   
+  }
+  
+  /* Estilos para la lista de temperamentos */
+  .temperamentList {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin-bottom: 20px;
+    padding: 0;
+  }
+  
+  .temperamentItem {
+    background-color: #e6e6e6;
+    border-radius: 5px;
+    color: #333333;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .temperamentItem:hover {
+    background-color: #d4d4d4;
+  }
+  
+  .temperamentItem.active {
+    background-color: #7f58af;
+    color: #ffffff;
+  }
+  
+  /* Estilos para el botón de crear */
+  .createBtn {
+    background-color: #7f58af;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 20px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .createBtn:hover {
+    background-color: #6b429f;
+  }
+  
