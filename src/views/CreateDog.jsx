@@ -87,7 +87,7 @@ const CreateDog = () => {
     return errors;
   };
 
-  //a
+  
 
   const handleChange = (e) => {
     setCompleted({ ...completed, [e.target.name]: e.target.value });
