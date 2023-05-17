@@ -87,7 +87,7 @@ const CreateDog = () => {
     return errors;
   };
 
-  //a
+  
 
   const handleChange = (e) => {
     setCompleted({ ...completed, [e.target.name]: e.target.value });
@@ -125,7 +125,8 @@ const CreateDog = () => {
     setErrors(errors);
 
     if (Object.values(errors).length === 0) {
-      axios.post("http://localhost:3001/dogs/createDog", finalForm);
+      // axios.post("http://localhost:3001/dogs/createDog", finalForm);
+      axios.post("/dogs/createDog", finalForm);
       setCreate(!create);
       setCompleted(initialState);
     }

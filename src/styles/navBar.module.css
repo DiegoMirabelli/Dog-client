@@ -24,14 +24,11 @@
 .menu {
   max-width: 50px; /* establece un ancho máximo para el logo en píxeles */
   transform: rotate(180deg);
-  transform: scale(0.8);
+  
   transition: 1s;
 }
 
-.menu:hover {
-  transform: scale(1);
-  transition: 1s;
-}
+
 
 .btnMenu {
   position: absolute;
@@ -56,7 +53,7 @@
 }
 
 /*abrir el menú */
-.nav.menuOpen + .menuCntainer {
+.nav.menuOpen + .menuContainer {
   transform: translateX(0%);
 }
 
