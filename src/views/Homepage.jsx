@@ -12,7 +12,7 @@ const Home = () => {
   const dispatch = useDispatch();
   const allDogs = useSelector((state) => state.dogs);
   const [currentPage, setCurrentPage] = useState(1);
-  const [DogPerPage, setDogPerPage] = useState(8);
+  const [DogPerPage] = useState(8);
   const indexLastDog = currentPage * DogPerPage;
   const indexFirstDog = indexLastDog - DogPerPage;
 

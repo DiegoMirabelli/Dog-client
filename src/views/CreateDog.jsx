@@ -51,9 +51,11 @@ const CreateDog = () => {
       errors.height = "Dog height is required";
     }
     //verifica si heightmax es menor o igual que el valor de heightmin
+
     if (parseInt(completed.heightmax) <= parseInt(completed.heightmin)) {
       errors.height = "Height-max must be higher than height-min";
     }
+
     if (!completed.weightmin || !completed.weightmax) {
       errors.weight = "Dog weight is required";
     }
@@ -78,9 +80,13 @@ const CreateDog = () => {
     if (completed.heightmax < 0 || completed.heightmin < 0) {
       errors.height = "The value must be greater than 0";
     }
+    if (completed.heightmax < 0 || completed.heightmin < 0 || completed.weightmax < 0 || completed.weightmin < 0 || completed.life_spanmax < 0 || completed.life_spanmin < 0) {
+      errors.value = "All values must be greater than 0";
+    }
 
     return errors;
   };
+
 
   const handleChange = (e) => {
     setCompleted({ ...completed, [e.target.name]: e.target.value });
@@ -116,6 +122,7 @@ const CreateDog = () => {
     e.preventDefault();
     const errors = validate(completed);
     setErrors(errors);
+
     if (Object.values(errors).length === 0) {
       axios.post("http://localhost:3001/dogs/createDog", finalForm);
       setCreate(!create);
@@ -146,6 +153,8 @@ const CreateDog = () => {
           )}
           <div className={styles.form}>
             <div className={styles.label}>Name of your puppy:</div>
+
+            {errors.belleza ? <label>{errors.belleza}</label> : null}
             <input
               type="text"
               name="name"
@@ -241,7 +250,11 @@ const CreateDog = () => {
                   Create
                 </button>
               ) : (
-                <Link onClick={() => dispatch(getDogs())} to="/home" className={styles.regresar}>
+                <Link
+                  onClick={() => dispatch(getDogs())}
+                  to="/home"
+                  className={styles.regresar}
+                >
                   RETURN TO HOME
                 </Link>
               )}

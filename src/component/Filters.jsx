@@ -10,7 +10,7 @@ import styles from "../styles/filters.module.css";
 
 export default function Filters({ setCurrentPage }) {
   const dispatch = useDispatch();
-  const [state, setState] = useState("");
+  const [_,setState] = useState("");
   const temperaments = useSelector((state) => state.temperaments);
 
   //ordeno los temperamentos de a-z

@@ -56,7 +56,7 @@
 }
 
 /*abrir el menú */
-.nav.menuOpen + .menuContainer {
+.nav.menuOpen + .menuCntainer {
   transform: translateX(0%);
 }
 

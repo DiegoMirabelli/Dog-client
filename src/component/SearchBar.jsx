@@ -6,13 +6,8 @@ import {getByName} from '../store/actions'
 function SearchBar({setCurrentPage}) {
   const dispatch = useDispatch();
   const [name, setName] = useState("");
-  const [dogData, setDogData] = useState(null);
-  const [query, setQuery] = useState('');
 
-  // const handleQueryChange = (event) => {
-  //   setQuery(event.target.value);
-  //   setCurrentPage(1);
-  // };
+
 
   function handleInputChange(e) {
     setName(e.target.value);

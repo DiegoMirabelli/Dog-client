@@ -1,4 +1,3 @@
-import { A_Z, Z_A, WEIGHT_MAX, WEIGHT_MIN } from "./actions";
 
 const initialState = {
   dogs: [],
@@ -47,7 +46,7 @@ function rootReducer(state = initialState, action) {
 
         case 'FILTER_BY':
         const alldogs = state.allDogs;
-        /*  console.log(action.payload); */
+       
         const filter2 =
           action.payload === "Created"
             ? alldogs.filter((ele) => ele.createdInDb)
