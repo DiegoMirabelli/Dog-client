@@ -7,6 +7,10 @@ import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from "redux";
 import thunk from "redux-thunk";
 import rootReducer from "./store/reducers";
+import axios from "axios";
+
+// axios.defaults.baseURL = 'http://localhost:3001'
+axios.defaults.baseURL = 'https://dog-api-production-3eee.up.railway.app'
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 
