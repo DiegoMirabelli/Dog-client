@@ -13,7 +13,7 @@ export default function Filters({ setCurrentPage }) {
   const [_,setState] = useState("");
   const temperaments = useSelector((state) => state.temperaments);
 
-  //ordeno los temperamentos de a-z
+  //ordeno los temperamnts de a-z
   const temperamentsOrder = temperaments.sort((a, b) => {
     if (a.name > b.name) {
       return 1;
