@@ -10,7 +10,7 @@ import rootReducer from "./store/reducers";
 import axios from "axios";
 
 // axios.defaults.baseURL = 'http://localhost:3001'
-axios.defaults.baseURL = 'https://dog-api-production-3eee.up.railway.app'
+axios.defaults.baseURL = 'https://dog-api-vert.vercel.app'
 
 export const store = createStore(rootReducer, applyMiddleware(thunk));
 
