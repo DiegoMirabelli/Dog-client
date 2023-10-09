@@ -11,45 +11,39 @@
     background-color: #414653; 
     color: #a7f59b;
     max-width: 260px;
-    max-height: 345px;
-    min-height: 345px;
-    overflow: hidden;
-    margin-top: -5px;
+    max-height: auto;
+
+    /* overflow: hidden; */
     
     
   }
+.cardContainer img {
+  width: 260px;
+  height: 250px;
+}
+
   .cardContainer:hover .title {
-    margin-top: -175px;
-    filter: opacity(0.5);
+    /* margin-top: -175px; */
+    /* filter: opacity(0.5); */
   }
-  .cardContainer img {
-    filter: opacity(0.8);
-    filter: opacity(0.8);
-    transition: all 2s;
-  }
-  .cardContainer:hover img {
-    transition: all 0.3s;
-    filter: opacity(1);
-  }
-  
+ 
+
   
   /* ---CARDCONTAINER--- */
   
   
   
   .title {
-    transition: all 0.6s ease-out;
     text-align: center;
-    transition-delay: 0.33s;
     max-height: 20px;
+    min-height: 20px;
     font-size: 1em;
-    padding-bottom: 15px;
     font-family: 'Courier New';
     letter-spacing: 1px;
   }
   .cardInfo {
-    margin: 0;
+    display: none;
     color: #ffffff;
     font-family: 'Courier New';
-    font-size: small;
+    font-size: 1ch;
   }
