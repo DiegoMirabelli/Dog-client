@@ -43,6 +43,7 @@ const LandingPage = () => {
         <div className={styles.header}>
           <h1>PI-Dogs</h1>
         </div>
+        <p>Explore canine diversity on our list and discover the perfect companion for you.</p>
         <Link to="/home">
           <button>Enter</button>
         </Link>
@@ -55,7 +56,7 @@ const LandingPage = () => {
       {showCard && (
         <div className={styles.landingCardContainer}>
           <LandingCard dog={randomDog} />
-          <p className={styles.eslogan}>Explore canine diversity on our list and discover the perfect companion for you.</p>
+          
         </div>
         
       )}

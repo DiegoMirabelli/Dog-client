@@ -10,7 +10,7 @@ const DogCard = ({ dog }) => {
       <div className={styles.cardContainer}>
         <h2 className={styles.title}>{dog.name}</h2>
         <div>
-          <img src={dog.image} alt={dog.name} height="550px" width="500px" />
+          <img className={styles.imgCard} src={dog.image} alt={dog.name}/>
           <div className={styles.cardInfo}>
             <p>Weight range: {dog.weight} kg</p>
             <p>Temperaments: {dog.temperaments.join(", ")}</p>

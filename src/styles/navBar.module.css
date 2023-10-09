@@ -3,7 +3,7 @@
   background-color: #414653;
   color: #a7f59b;
   display: flex;
-  flex-direction: row;
+  /* flex-direction: row; */
   justify-content: flex-start;
   border-bottom: 1px solid;
   position: fixed;
@@ -46,7 +46,7 @@
   width: 25%;
   height: 92%;
   background-color: #414653;
-  transform: translateX(100%);
+  transform: translateX(1000%);
   overflow: hidden;
   border-left: 1px solid #a7f59b;
   transition: transform 0.3s ease-out;
@@ -94,23 +94,3 @@
   cursor: pointer;
 }
 
-@media (max-width: 768px) {
-  .logo {
-    max-width: 20%; /* establece un ancho máximo para el logo en porcentaje para pantallas más pequeñas */
-    padding: 5px;
-  }
-  
-  .menuContainer {
-    left: 80%;
-    width: 20%;
-  }
-  
-  .menuList li {
-    margin: 10px;
-    margin-right: 20px;
-  }
-  
-  .menuList li a {
-    font-size: 1rem;
-  }
-}
